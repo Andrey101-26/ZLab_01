@@ -1,7 +1,7 @@
 from toolkit import CalculatorError
 
 
-def token(w):
+def token(w: str) -> list:
     a=[]
     g=""
     k = 0
@@ -25,7 +25,7 @@ def token(w):
     if g != "":
         a.append(g)
     return a
-def val(w):
+def val(w: list) -> None:
     for i in range(len(w)):
         if i%2==0:
             if w[i] in "+-*/":
@@ -37,12 +37,12 @@ def val(w):
         raise CalculatorError("Пустое выражение")
     if len(w)%2==0:
         raise CalculatorError("Неполное выражение")
-def pri(w):
+def pri(w: str) -> int:
     if w in "*/":
         return 2
     else:
         return 1
-def rpn(w):
+def rpn(w: list) -> list:
     r=[]
     s=[]
     for i in w:
@@ -55,7 +55,7 @@ def rpn(w):
     while s:
         r.append((s.pop()))
     return r
-def calc(w):
+def calc(w: list) -> float:
     s=[]
     for i in w:
         if i in "+-*/":
@@ -74,7 +74,7 @@ def calc(w):
         else:
             s.append(float(i))
     return s[0]
-def exp(w):
+def exp(w: str) -> float:
     a=token(w)
     val(a)
     a=rpn(a)

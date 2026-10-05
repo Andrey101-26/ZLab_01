@@ -7,17 +7,17 @@ from toolkit.errors import ConverterError
 cf=os.path.join(os.path.dirname(__file__),"units.json")
 with open(cf,encoding="utf-8") as fh:
     units=json.load(fh)
-def base(v,g,u):
+def base(v: float, g: str, u: str) -> float:
     return v*units[g][u]
-def unbase(v,g,u):
+def unbase(v: float, g: str, u: str) -> float:
     return v/units[g][u]
-def group(u):
+def group(u: str):
     for a in units:
         if u in units[a]:
             return a
     else:
         return None
-def tc(v,u):
+def tc(v: float, u: str) -> float:
     if u=="c":
         t=v
     if u=="f":
@@ -27,14 +27,14 @@ def tc(v,u):
     if t<(-273.15):
         raise ConverterError("Невозможная температура")
     return t
-def fc(v,u):
+def fc(v: float, u: str) -> float:
     if u=="c":
         return v
     if u=="f":
         return (v*9/5)+32
     if u=="k":
         return v+273.15
-def conv(v,n,k):
+def conv(v: float, n: str, k: str) -> float:
     n=n.lower()
     k=k.lower()
     a=group(n)
