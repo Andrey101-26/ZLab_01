@@ -2,6 +2,7 @@
 import subprocess
 import sys
 
+
 def run_toolkit(*args):
     return subprocess.run(
         [sys.executable, "-m", "toolkit", *args],

@@ -1,7 +1,10 @@
 """Тесты для конвертера"""
 import pytest
+
 from toolkit import ConverterError
 from toolkit.converter import conv
+
+
 def test_1():
     assert conv(1000, "mm", "m") == 1.0
 def test_2():

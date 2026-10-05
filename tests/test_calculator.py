@@ -1,7 +1,10 @@
 """Тесты для ядра калькулятора."""
 import pytest
+
 from toolkit import CalculatorError
 from toolkit.calculator import exp
+
+
 def test_1():
     assert exp("2+3")==5.0
 def test_2():
