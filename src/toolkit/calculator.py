@@ -1,4 +1,4 @@
-from src.toolkit import CalculatorError
+from toolkit import CalculatorError
 
 
 def token(w):

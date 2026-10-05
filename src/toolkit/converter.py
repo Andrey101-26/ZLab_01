@@ -2,7 +2,7 @@
 import json
 import os
 
-from src.toolkit.errors import ConverterError
+from toolkit.errors import ConverterError
 
 cf=os.path.join(os.path.dirname(__file__),"units.json")
 with open(cf,encoding="utf-8") as fh:

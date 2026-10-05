@@ -1,9 +1,9 @@
 """CLI toolkit."""
 import argparse
 import sys
-from src.toolkit.errors import CalculatorError, ConverterError
-from src.toolkit.calculator import exp
-from src.toolkit.converter import conv
+from toolkit.errors import CalculatorError, ConverterError
+from toolkit.calculator import exp
+from toolkit.converter import conv
 def main():
     a=argparse.ArgumentParser(prog="toolkit")
     sub= a.add_subparsers(dest="command",required = True)
