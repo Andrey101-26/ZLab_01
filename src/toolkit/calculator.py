@@ -66,6 +66,8 @@ def calc(w):
             elif i=="*":
                 s.append(a*b)
             elif i=="/":
+                if b==0:
+                    raise CalculatorError("Деление на ноль")
                 s.append(a/b)
         else:
             s.append(float(i))
