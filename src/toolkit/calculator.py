@@ -14,12 +14,14 @@ def token(w):
         else:
             if b=="-" and k==0:
                 g="-"+g
-            else:
+            elif b in "+-*/":
                 if g != "":
                     a.append(g)
                 a.append(b)
                 g=""
                 k=0
+            else:
+                raise CalculatorError("Недопустимый символ"+b)
     if g != "":
         a.append(g)
     return a

@@ -35,6 +35,8 @@ def fc(v,u):
     if u=="k":
         return v+273.15
 def conv(v,n,k):
+    n=n.lower()
+    k=k.lower()
     a=group(n)
     b=group(k)
     if a!=b:
