@@ -12,7 +12,11 @@ pip install -e .
 
 ```
 python -m toolkit calc "2 + 3 * 4"
+```
+```
 python -m toolkit convert 1000 --from mm --to m
+```
+```
 python -m toolkit --help
 ```
 
@@ -50,5 +54,7 @@ python -m toolkit --help
 
 ```
 python -m pytest
+```
+```
 ruff check .
 ```

@@ -21,7 +21,7 @@ def token(w: str) -> list:
                 g=""
                 k=0
             else:
-                raise CalculatorError("Недопустимый символ"+b)
+                raise CalculatorError("Недопустимый символ"+" "+b)
     if g != "":
         a.append(g)
     return a
