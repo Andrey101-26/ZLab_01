@@ -8,6 +8,7 @@ from toolkit.errors import CalculatorError, ConverterError
 
 
 def main() -> int:
+    """Разбирает аргументы командной строки и вызывает ядро"""
     a=argparse.ArgumentParser(prog="toolkit")
     sub= a.add_subparsers(dest="command",required = True)
     calc_parser = sub.add_parser("calc",help="калькуляьтор")

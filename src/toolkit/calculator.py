@@ -2,6 +2,7 @@ from toolkit import CalculatorError
 
 
 def token(w: str) -> list:
+    """Разбивает строку на токены"""
     a=[]
     g=""
     k = 0
@@ -25,7 +26,9 @@ def token(w: str) -> list:
     if g != "":
         a.append(g)
     return a
+
 def val(w: list) -> None:
+    """Проверяет порядок"""
     for i in range(len(w)):
         if i%2==0:
             if w[i] in "+-*/":
@@ -37,12 +40,16 @@ def val(w: list) -> None:
         raise CalculatorError("Пустое выражение")
     if len(w)%2==0:
         raise CalculatorError("Неполное выражение")
+
 def pri(w: str) -> int:
+    """Определяет приоритет оператора"""
     if w in "*/":
         return 2
     else:
         return 1
+
 def rpn(w: list) -> list:
+    """Переводит токены в RPN"""
     r=[]
     s=[]
     for i in w:
@@ -55,7 +62,9 @@ def rpn(w: list) -> list:
     while s:
         r.append((s.pop()))
     return r
+
 def calc(w: list) -> float:
+    """Считает RPN"""
     s=[]
     for i in w:
         if i in "+-*/":
@@ -74,7 +83,9 @@ def calc(w: list) -> float:
         else:
             s.append(float(i))
     return s[0]
+
 def exp(w: str) -> float:
+    """Главная функция"""
     a=token(w)
     val(a)
     a=rpn(a)
