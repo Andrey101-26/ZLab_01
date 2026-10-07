@@ -15,6 +15,8 @@ def token(w: str) -> list:
         else:
             if b=="-" and k==0:
                 g="-"+g
+            elif b=="+" and k==0:
+                continue
             elif b in "+-*/":
                 if g != "":
                     a.append(g)
