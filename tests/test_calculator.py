@@ -1,4 +1,4 @@
-"""Тесты для ядра калькулятора."""
+"""Тесты для калькулятора."""
 import pytest
 
 from toolkit import CalculatorError
@@ -27,11 +27,11 @@ def test_nbase_calc_7():
     with pytest.raises(CalculatorError):
         exp("")
 
-def test_nbase_calc_8():
+def test_validate_calc_8():
     with pytest.raises(CalculatorError):
         exp("2 * * 3")
 
-def test_abc_calc_9():
+def test_tokenize_calc_9():
     with pytest.raises(CalculatorError):
         exp("2 + a")
 

@@ -1,47 +1,9 @@
+"""Ядро калькулятора"""
+
 from toolkit import CalculatorError
+from toolkit.tokenize import token
+from toolkit.validate import val
 
-
-def token(w: str) -> list:
-    """Разбивает строку на токены"""
-    a=[]
-    g=""
-    k = 0
-    for b in w:
-        if b==" ":
-            continue
-        if b in "0123456789.":
-            g = g + b
-            k=1
-        else:
-            if b=="-" and k==0:
-                g="-"+g
-            elif b=="+" and k==0:
-                continue
-            elif b in "+-*/":
-                if g != "":
-                    a.append(g)
-                a.append(b)
-                g=""
-                k=0
-            else:
-                raise CalculatorError("Недопустимый символ"+" "+b)
-    if g != "":
-        a.append(g)
-    return a
-
-def val(w: list) -> None:
-    """Проверяет порядок"""
-    for i in range(len(w)):
-        if i%2==0:
-            if w[i] in "+-*/":
-                raise CalculatorError("Ошибка ввода оператора")
-        else:
-            if w[i] not in "+-*/":
-                raise CalculatorError("Ошибка ввода числа")
-    if len(w)==0:
-        raise CalculatorError("Пустое выражение")
-    if len(w)%2==0:
-        raise CalculatorError("Неполное выражение")
 
 def pri(w: str) -> int:
     """Определяет приоритет оператора"""
