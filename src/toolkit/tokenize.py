@@ -12,6 +12,8 @@ def token(w: str) -> list:
         if b==" ":
             continue
         if b in "0123456789.":
+            if b == "." and "." in g:
+                raise CalculatorError("Некорректное число")
             g = g + b
             k=1
         else:
