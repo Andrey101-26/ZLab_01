@@ -11,7 +11,7 @@ def main() -> int:
     """Разбирает аргументы командной строки и вызывает ядро"""
     a=argparse.ArgumentParser(prog="toolkit")
     sub= a.add_subparsers(dest="command",required = True)
-    calc_parser = sub.add_parser("calc",help="калькуляьтор")
+    calc_parser = sub.add_parser("calc",help="калькулятор")
     calc_parser.add_argument("expression", help="выражение для вычисления")
     conv_parser=sub.add_parser("convert", help="конвертер")
     conv_parser.add_argument("v",help="значение")

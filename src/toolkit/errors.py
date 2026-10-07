@@ -6,8 +6,8 @@ class ToolkitError(Exception):
 
 
 class CalculatorError(ToolkitError):
-    """Ошибка вычисления вырожения."""
+    """Ошибка вычисления выражения."""
 
 
 class ConverterError(ToolkitError):
-    """Ошибка конвертации велечин."""
+    """Ошибка конвертации величин."""

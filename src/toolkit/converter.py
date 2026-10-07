@@ -8,15 +8,15 @@ cf=os.path.join(os.path.dirname(__file__),"units.json")
 with open(cf,encoding="utf-8") as fh:
     units=json.load(fh)
 def base(v: float, g: str, u: str) -> float:
-    """Переводит в базовую еденицу"""
+    """Переводит в базовую единицу"""
     return v*units[g][u]
 
 def unbase(v: float, g: str, u: str) -> float:
-    """Переводит из базовой еденицы"""
+    """Переводит из базовой единицы"""
     return v/units[g][u]
 
 def group(u: str):
-    """Определяет группу еденицы"""
+    """Определяет группу единицы"""
     for a in units:
         if u in units[a]:
             return a
